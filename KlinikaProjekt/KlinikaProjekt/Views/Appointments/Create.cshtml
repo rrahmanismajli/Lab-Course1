@@ -1,0 +1,59 @@
+﻿@using KlinikaProjekt.Data
+@model KlinikaProjekt.Models.Appointment
+
+@{
+    ViewData["Title"] = "Appointment";
+}
+
+<h1 class="text-center"><i class="bi bi-arrow-right-square"></i>Book Appointment</h1>
+
+
+<hr />
+<div class="row text-center contact-box" style="justify-content:center;">
+    <div class="col-md-4 left">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger right"></div>
+            <div class="form-group ">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control field" />
+                <span asp-validation-for="Name" class="text-danger field"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="number" class="control-label"></label>
+                <input asp-for="number" class="form-control field" />
+                <span asp-validation-for="number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="email" class="control-label"></label>
+                <input asp-for="email" class="form-control field" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="adress" class="control-label"></label>
+                <input asp-for="adress" class="form-control field" />
+                <span asp-validation-for="adress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AppointmentDate" class="control-label"></label>
+                <input asp-for="AppointmentDate" class="form-control field" />
+                <span asp-validation-for="AppointmentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrainingCategory" class="control-label"></label>
+                <select asp-for="TrainingCategory" asp-items="Html.GetEnumSelectList<Trainingategory>()" class="form-control field"></select>
+                <span asp-validation-for="TrainingCategory"  class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Book Now!" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
