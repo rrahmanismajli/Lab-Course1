@@ -118,6 +118,33 @@ namespace KlinikaProjekt.Migrations
                     b.ToTable("Appointment");
                 });
 
+            modelBuilder.Entity("KlinikaProjekt.Models.Contact", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("phoneNumber")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Contact");
+                });
+
             modelBuilder.Entity("KlinikaProjekt.Models.Department", b =>
                 {
                     b.Property<int>("Id")
@@ -165,6 +192,33 @@ namespace KlinikaProjekt.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Doctor");
+                });
+
+            modelBuilder.Entity("KlinikaProjekt.Models.News", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("datetime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("desc")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("News");
                 });
 
             modelBuilder.Entity("KlinikaProjekt.Models.Order", b =>
@@ -238,6 +292,27 @@ namespace KlinikaProjekt.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Patient");
+                });
+
+            modelBuilder.Entity("KlinikaProjekt.Models.Services", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("desc")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Services");
                 });
 
             modelBuilder.Entity("KlinikaProjekt.Models.ShoppingCartItem", b =>

@@ -28,7 +28,7 @@ namespace KlinikaProjekt.Controllers
         // GET: Appointments/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
+            if (id == null )
             {
                 return NotFound();
             }
@@ -60,7 +60,7 @@ namespace KlinikaProjekt.Controllers
             {
                 _context.Add(appointment);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return View("AppointmentSuccess");
             }
             return View(appointment);
         }

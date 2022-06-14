@@ -33,7 +33,7 @@ namespace KlinikaProjekt.Controllers
         {
             return View();
         }
-
+      
         [HttpPost]
         public async Task<IActionResult> Create([Bind("FullName,ProfilePictureURL,Bio")]Doctor doctor)
         {

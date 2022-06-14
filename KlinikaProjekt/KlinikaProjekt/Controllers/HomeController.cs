@@ -1,22 +1,37 @@
-﻿using KlinikaProjekt.Models;
+﻿using KlinikaProjekt.Data;
+using KlinikaProjekt.Data.Services;
+using KlinikaProjekt.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
+using System.Threading.Tasks;
+using KlinikaProjekt.Data.ViewModels;
 
 namespace KlinikaProjekt.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IDoctorsService _service;
+        private readonly AppDbContext _context;
+        public HomeController(IDoctorsService service, AppDbContext context)
+		{
+			_service = service;
+			_context = context;
+		}
 
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
 
-        public IActionResult Index()
+		public async Task<IActionResult> Index()
         {
-            return View();
+            var data = await _service.GetAllAsync();
+
+            ViewModel myModel = new ViewModel();
+
+            myModel.Doctors = data;
+            myModel.services = await _context.Services.ToListAsync();
+
+            return View(myModel);
+            
         }
 
      

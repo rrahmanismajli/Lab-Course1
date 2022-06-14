@@ -1,8 +1,7 @@
-﻿@{
-    ViewData["Title"] = "Lorem CLinic";
+﻿
+@{
+    ViewData["Title"] = "Lorem Clinic";
 }
-
-
 	<section class="hero-banner" id="home-section">
 	     <div class="container">
 		     <div class="row">
@@ -77,7 +76,7 @@
 						   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release</p>
 						   
 						    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release</p>
-						   <a href="#" class="btn btn-primary">Lean More</a>
+						   <a asp-controller="Contacts" asp-action="Create" class="btn btn-primary">Contact Us</a>
 					  </div>
 				  </div>
 				  
@@ -91,71 +90,11 @@
 	
 	
 <!--Start services Section-->
-	<section class="services-section" id="services-section">
-	     <div class="container">
-		     <div class="row">
-			     
-				 <div class="col-md-12">
-				     <h2 class="section-title text-center">Services</h2>
-				 </div>
+	
+				 <partial name="_sectionServices"/>
 				 
 				 
-				 <div class="col-md-4">
-				      <div class="services-box">
-					      <img src="images/neurology-icon.png" alt="">
-						  <h3>Neurology</h3>
-						  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
-					 </div>
-				 </div>
-				 
-				 
-				 <div class="col-md-4">
-				      <div class="services-box">
-					      <img src="images/eyecare-icon.png" alt="">
-						  <h3>Eyes care</h3>
-						  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
-					 </div>
-				 </div> 
-				 
-				 
-				<div class="col-md-4">
-				      <div class="services-box">
-					      <img src="images/pulmonary-icon.png" alt="">
-						  <h3>Pulomonary</h3>
-						  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
-					 </div>
-				 </div>  
-				 
-				 <div class="col-md-4">
-				      <div class="services-box">
-					      <img src="images/cardiology-icon.png" alt="">
-						  <h3>Cardiology</h3>
-						  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
-					 </div>
-				 </div>  
-				 
-				 
-				  <div class="col-md-4">
-				      <div class="services-box">
-					      <img src="images/dental-icon.png" alt="">
-						  <h3>Dental Care</h3>
-						  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
-					 </div>
-				 </div>
-				 
-				 
-				   <div class="col-md-4">
-				      <div class="services-box">
-					      <img src="images/hepatology-icon.png" alt="">
-						  <h3>Hepatology</h3>
-						  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
-					 </div>
-				 </div>
-				 
-				 
-			 </div>
-		</div>
-	</section>
+	
 <!--End services Section-->
 	
 	
@@ -241,82 +180,10 @@
 			      <div class="col-md-12">
 				      <h2 class="section-title text-center">Our Expert Team</h2>
 				 </div>
-				 
-				 
-				 <div class="col-md-3">
-				     <div class="team-box">
-					     <div class="team-media">
-						      <img src="images/team/1.jpg" alt="" >
-						 </div>
-						 <div class="team-info">
-						     <h3>Johnathan Doe</h3>
-							 <p>Cardiologist</p>
-							 <ul class="team-social">
-							    <li> <a href=""> <i class="fa fa-facebook" aria-hidden="true"></i> </a>  </li>
-							    <li> <a href=""> <i class="fa fa-twitter" aria-hidden="true"></i> </a>  </li>
-							    <li> <a href=""> <i class="fa fa-linkedin" aria-hidden="true"></i></a>  </li>
-							    <li> <a href=""> <i class="fa fa-instagram" aria-hidden="true"></i></a>  </li>
-							 </ul>
-						 </div>
-					 </div>
-				 </div>
-				 
-			 <div class="col-md-3">
-				     <div class="team-box">
-					     <div class="team-media">
-						      <img src="images/team/2.jpg" alt="" >
-						 </div>
-						 <div class="team-info">
-						     <h3>Johnathan Doe</h3>
-							 <p>Cardiologist</p>
-							 <ul class="team-social">
-							    <li> <a href=""> <i class="fa fa-facebook" aria-hidden="true"></i> </a>  </li>
-							    <li> <a href=""> <i class="fa fa-twitter" aria-hidden="true"></i> </a>  </li>
-							    <li> <a href=""> <i class="fa fa-linkedin" aria-hidden="true"></i></a>  </li>
-							    <li> <a href=""> <i class="fa fa-instagram" aria-hidden="true"></i></a>  </li>
-							 </ul>
-						 </div>
-					 </div>
-				 </div>
-				 
-				 
-				  <div class="col-md-3">
-				     <div class="team-box">
-					     <div class="team-media">
-						      <img src="images/team/3.jpg" alt="" >
-						 </div>
-						 <div class="team-info">
-						     <h3>Johnathan Doe</h3>
-							 <p>Cardiologist</p>
-							 <ul class="team-social">
-							    <li> <a href=""> <i class="fa fa-facebook" aria-hidden="true"></i> </a>  </li>
-							    <li> <a href=""> <i class="fa fa-twitter" aria-hidden="true"></i> </a>  </li>
-							    <li> <a href=""> <i class="fa fa-linkedin" aria-hidden="true"></i></a>  </li>
-							    <li> <a href=""> <i class="fa fa-instagram" aria-hidden="true"></i></a>  </li>
-							 </ul>
-						 </div>
-					 </div>
-				 </div>
-				 
-				 
-				  <div class="col-md-3">
-				     <div class="team-box">
-					     <div class="team-media">
-						      <img src="images/team/4.jpg" alt="" >
-						 </div>
-						 <div class="team-info">
-						     <h3>Johnathan Doe</h3>
-							 <p>Cardiologist</p>
-							 <ul class="team-social">
-							    <li> <a href=""> <i class="fa fa-facebook" aria-hidden="true"></i> </a>  </li>
-							    <li> <a href=""> <i class="fa fa-twitter" aria-hidden="true"></i> </a>  </li>
-							    <li> <a href=""> <i class="fa fa-linkedin" aria-hidden="true"></i></a>  </li>
-							    <li> <a href=""> <i class="fa fa-instagram" aria-hidden="true"></i></a>  </li>
-							 </ul>
-						 </div>
-					 </div>
-				 </div>
-				 
+				
+			 
+			<partial name="_team"/>
+				
 				 
 			 </div>
 		</div>
@@ -391,72 +258,6 @@
 	
 	
 	
-<!--Start Blog 	-->
-	<section class="blog-section" id="blog-section">
-		
-		<div class="container">
-		     <div class="row">
-			     <div  class="col-md-12">
-				      <h2 class="section-title text-center">Blog & News</h2>
-				 </div>
-				 
-				 
-				<div class="col-md-4">
-				      <div class="blog-box">
-					     <div class="blog-media">
-						      <img src="images/blog1.jpg" alt="">
-						  </div>
-						  <div class="blog-info">
-						      <h3><a href="#">Lorem Ipsum is simply dummy  </a></h3>
-							  <ul class="meta">
-							      <li> <i class="fa fa-calendar" aria-hidden="true"></i> 18 Sep 2021 </li>
-							      <li> <i class="fa fa-user-o" aria-hidden="true"></i> Admin </li>
-							  </ul>
-							  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-						  </div>
-					</div>
-				 </div> 
-				 
-				
-				 <div class="col-md-4">
-				      <div class="blog-box">
-					     <div class="blog-media">
-						      <img src="images/blog2.jpg" alt="">
-						  </div>
-						  <div class="blog-info">
-						      <h3><a href="#">Lorem Ipsum is simply  </a></h3>
-							  <ul class="meta">
-							      <li> <i class="fa fa-calendar" aria-hidden="true"></i> 18 Sep 2021 </li>
-							      <li> <i class="fa fa-user-o" aria-hidden="true"></i> Admin </li>
-							  </ul>
-							  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-						  </div>
-					</div>
-				 </div> 
-				 
-				 
-				 <div class="col-md-4">
-				      <div class="blog-box">
-					     <div class="blog-media">
-						      <img src="images/blog3.jpg" alt="">
-						  </div>
-						  <div class="blog-info">
-						      <h3><a href="#">Lorem Ipsum is simply dummy  </a></h3>
-							  <ul class="meta">
-							      <li> <i class="fa fa-calendar" aria-hidden="true"></i> 18 Sep 2021 </li>
-							      <li> <i class="fa fa-user-o" aria-hidden="true"></i> Admin </li>
-							  </ul>
-							  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-						  </div>
-					</div>
-				 </div> 
-				 
-				 
-			</div>
-		</div>
-		
-	</section>
-<!--End Blog 	-->
 
 
 @section Scripts{ <script>

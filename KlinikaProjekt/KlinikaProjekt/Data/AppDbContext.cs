@@ -42,5 +42,8 @@ namespace KlinikaProjekt.Data
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
         public DbSet<Appointment> Appointment { get; set; }
+        public DbSet<KlinikaProjekt.Models.Contact> Contact { get; set; }
+        public DbSet<KlinikaProjekt.Models.News> News { get; set; }
+        public DbSet<KlinikaProjekt.Models.Services> Services { get; set; }
     }
 }

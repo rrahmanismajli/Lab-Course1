@@ -1,0 +1,14 @@
+﻿@using KlinikaProjekt.Data.ViewModels;
+
+@model ViewModel
+
+@foreach(Services services in Model.services){
+				 <div class="col-md-4">
+				      <div class="services-box">
+					      <img width="100px" height="100px" src="@services.image" alt="@services.title">
+						  <h3>@services.title</h3>
+						  <p>@services.desc</p>
+					 </div>
+				 </div>
+				 
+				 }

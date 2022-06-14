@@ -1,0 +1,66 @@
+﻿@model KlinikaProjekt.Models.Contact
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-center">Send us a Message</h1>
+
+<hr />
+<div class="contact-in">
+			<div class="contact-map">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2934.702561810067!2d21.177342214630652!3d42.64646517916867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549ec8f348ba5d%3A0xa41552bf1b3ebf7b!2sMuharrem%20Fejza%2C%20Prishtina!5e0!3m2!1sen!2s!4v1654904025404!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+			<div class="contact-form">
+				<h1>Contact Us</h1>
+				<form asp-action="Create">
+                    <input  asp-for="Name" placeholder="Full Name..." class="contact-form-txt">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                    <input asp-for="email" placeholder="E-mail" class="contact-form-txt">
+                      <span asp-validation-for="email" class="text-danger"></span>
+                    <input asp-for="phoneNumber" placeholder="Tel..." class="contact-form-txt">
+                     <span asp-validation-for="phoneNumber" class="text-danger"></span>
+                    <textarea  asp-for="message" placeholder="Message..." class="contact-form-textarea"></textarea>
+                    <span asp-validation-for="message" class="text-danger"></span>
+					<input type="submit" value="Submit" class="contact-form-btn" />
+     		</form>
+			</div>
+		</div>
+@*<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="email" class="control-label"></label>
+                <input asp-for="email" class="form-control" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="phoneNumber" class="control-label"></label>
+                <input asp-for="phoneNumber" class="form-control" />
+                <span asp-validation-for="phoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="message" class="control-label"></label>
+                <input asp-for="message" class="form-control" />
+                <span asp-validation-for="message" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,24 @@
+﻿@using KlinikaProjekt.Data.ViewModels;
+
+@model ViewModel
+
+@foreach(Doctor doctor in Model.Doctors){
+				 <div class="col-md-3">
+				     <div class="team-box">
+					     <div class="team-media">
+						      <img width="350px" height="250px" src="@doctor.ProfilePictureURL" alt="@doctor.FullName" >
+						 </div>
+						 <div class="team-info">
+						     <h3> @Html.DisplayFor(modelItem => doctor.FullName)</h3>
+							 <p>Cardiologist</p>
+							 <ul class="team-social">
+							    <li> <a href="#"> <i class="fa fa-facebook" aria-hidden="true"></i> </a>  </li>
+							    <li> <a href="#"> <i class="fa fa-twitter" aria-hidden="true"></i> </a>  </li>
+							    <li> <a href="#"> <i class="fa fa-linkedin" aria-hidden="true"></i></a>  </li>
+							    <li> <a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i></a>  </li>
+							 </ul>
+						 </div>
+					 </div>
+				 </div>
+				 
+				 }
