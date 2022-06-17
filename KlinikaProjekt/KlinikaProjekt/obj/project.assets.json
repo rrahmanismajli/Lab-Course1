@@ -9821,20 +9821,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\manik\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\manik\\Downloads\\Lab-Course1\\KlinikaProjekt\\KlinikaProjekt\\KlinikaProjekt.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\LabCourse\\Lab-Course1\\KlinikaProjekt\\KlinikaProjekt\\KlinikaProjekt.csproj",
       "projectName": "KlinikaProjekt",
-      "projectPath": "C:\\Users\\manik\\Downloads\\Lab-Course1\\KlinikaProjekt\\KlinikaProjekt\\KlinikaProjekt.csproj",
-      "packagesPath": "C:\\Users\\manik\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\manik\\Downloads\\Lab-Course1\\KlinikaProjekt\\KlinikaProjekt\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\LabCourse\\Lab-Course1\\KlinikaProjekt\\KlinikaProjekt\\KlinikaProjekt.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\LabCourse\\Lab-Course1\\KlinikaProjekt\\KlinikaProjekt\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\manik\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -9908,7 +9913,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
