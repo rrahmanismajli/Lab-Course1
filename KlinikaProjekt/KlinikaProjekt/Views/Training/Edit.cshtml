@@ -1,4 +1,4 @@
-﻿@model Training
+﻿@model KlinikaProjekt.Models.NewTrainingVM;
 @using KlinikaProjekt.Data;
  
 @{
@@ -47,7 +47,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label asp-for="DepartmentId" class="control-label"></label>
-                                <select asp-for="DepartmentId" class="form-control" asp-items="ViewBag.Training"></select>
+                                <select asp-for="DepartmentId" class="form-control" asp-items="ViewBag.Department"></select>
                                 <span asp-validation-for="DepartmentId" class="text-danger"></span>
                             </div>
                             <div class="form-group">
@@ -57,14 +57,14 @@
                             </div>
                             <div class="form-group">
                                 <label asp-for="PatientId" class="control-label"></label>
-                                <select asp-for="PatientId" class="form-control" asp-items="ViewBag.Producers"></select>
+                                <select asp-for="PatientId" class="form-control" asp-items="ViewBag.Patient"></select>
                                 <span asp-validation-for="PatientId" class="text-danger"></span>
                             </div>
-                            @*<div class="form-group">
+                       <div class="form-group">
                                 <label asp-for="DoctorIds" class="control-label"></label>
-                                <select asp-for="DoctorIds" class="form-control"  asp-items="ViewBag.Actors" multiple></select>
-                                <span asp-validation-for="DoctorIds" class="text-danger"></span>
-                            </div>*@
+                                <select asp-for="DoctorIds"  class="form-control"  asp-items="ViewBag.Doctor" multiple></select>
+                                <span asp-validation-for="DoctorIds"  class="text-danger"></span>
+                            </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">

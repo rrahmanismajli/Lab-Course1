@@ -29,6 +29,7 @@ namespace KlinikaProjekt.Controllers
 
             myModel.Doctors = data;
             myModel.services = await _context.Services.ToListAsync();
+            myModel.reviews = await _context.Review.ToListAsync();
 
             return View(myModel);
             

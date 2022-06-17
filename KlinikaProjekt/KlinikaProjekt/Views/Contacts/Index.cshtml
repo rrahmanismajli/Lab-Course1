@@ -43,9 +43,12 @@
                 @Html.DisplayFor(modelItem => item.message)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                 <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.id"><i class="bi bi-pencil-square"></i>Edit </a> |
+                            <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.id"><i class="bi bi-eye"></i>Details </a> |
+                            <a class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@item.id"><i class="bi bi-trash"></i>Delete </a>
+                           <br/>
+                           <a  class="btn btn-primary text-white" href="mailto:@item.email?subject=Mail from Our Site">Contact NOW </a>
+         
             </td>
         </tr>
 }

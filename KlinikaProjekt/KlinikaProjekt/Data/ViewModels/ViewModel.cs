@@ -9,5 +9,7 @@ namespace KlinikaProjekt.Data.ViewModels
 		public IEnumerable<Doctor> Doctors { get; set; }
 
 		public IEnumerable<KlinikaProjekt.Models.Services> services { get; set; }
+
+		public IEnumerable<Review> reviews { get; set; }
 	}
 }

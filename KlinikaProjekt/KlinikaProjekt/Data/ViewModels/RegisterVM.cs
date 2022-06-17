@@ -17,7 +17,7 @@ namespace KlinikaProjekt.Data.ViewModels
         public string EmailAddress { get; set; }
 
         [Required]
-        [DataType(DataType.Password)]
+        [DataType(DataType.Password,ErrorMessage ="Password must be at least one special char and a number")]
         public string Password { get; set; }
 
         [Display(Name = "Confirm password")]

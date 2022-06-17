@@ -1,0 +1,57 @@
+﻿@inject UserManager<ApplicationUser> UserManager; 
+
+@model KlinikaProjekt.Models.Review
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 style="text-align:center!important">We are Happy that you are satisfy with our servics!</h1>
+
+<hr />
+<div class="row" style="margin-left:37%">
+    <div class="col-md-4">
+        <form  asp-action="LeaveReview" >
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+                    <div class="form-group text-center">
+                        <img id="ProfilePicturePreview" class="border-info rounded-circle" style="max-width: 150px" />
+                    </div>
+            <div class="form-group">
+                <label asp-for="image" class="control-label"></label>
+                <input asp-for="image" class="form-control" />
+                <span asp-validation-for="image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="reviewText" class="control-label"></label>
+                <textarea asp-for="reviewText" class="form-control" ></textarea>
+                <span asp-validation-for="reviewText" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fullname" class="control-label"></label>
+                <input  asp-for="fullname"  class="form-control"/>
+                <span asp-validation-for="fullname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+     <script>
+
+        $(document).ready(function () {
+            var output = document.getElementById('ProfilePicturePreview');
+            output.src = $("#image").val();
+        })
+
+        $("#image").on("change", function () {
+            var output = document.getElementById('ProfilePicturePreview');
+            output.src = $(this).val();
+        })
+    </script>
+}

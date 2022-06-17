@@ -517,3 +517,10 @@ C:\Users\manik\Downloads\Lab-Course1\KlinikaProjekt\KlinikaProjekt\obj\Debug\net
 C:\Users\manik\Downloads\Lab-Course1\KlinikaProjekt\KlinikaProjekt\obj\Debug\net5.0\Razor\Views\Services\Index.cshtml.g.cs
 C:\Users\manik\Downloads\Lab-Course1\KlinikaProjekt\KlinikaProjekt\obj\Debug\net5.0\Razor\Views\Shared\_services.cshtml.g.cs
 C:\Users\manik\Downloads\Lab-Course1\KlinikaProjekt\KlinikaProjekt\obj\Debug\net5.0\Razor\Views\Shared\_sectionServices.cshtml.g.cs
+C:\Users\manik\Downloads\Lab-Course1\KlinikaProjekt\KlinikaProjekt\obj\Debug\net5.0\Razor\Views\Shared\_reviews.cshtml.g.cs
+C:\Users\manik\Downloads\Lab-Course1\KlinikaProjekt\KlinikaProjekt\obj\Debug\net5.0\Razor\Views\Reviews\Delete.cshtml.g.cs
+C:\Users\manik\Downloads\Lab-Course1\KlinikaProjekt\KlinikaProjekt\obj\Debug\net5.0\Razor\Views\Reviews\Details.cshtml.g.cs
+C:\Users\manik\Downloads\Lab-Course1\KlinikaProjekt\KlinikaProjekt\obj\Debug\net5.0\Razor\Views\Reviews\Edit.cshtml.g.cs
+C:\Users\manik\Downloads\Lab-Course1\KlinikaProjekt\KlinikaProjekt\obj\Debug\net5.0\Razor\Views\Reviews\Index.cshtml.g.cs
+C:\Users\manik\Downloads\Lab-Course1\KlinikaProjekt\KlinikaProjekt\obj\Debug\net5.0\Razor\Views\Reviews\LeaveReview.cshtml.g.cs
+C:\Users\manik\Downloads\Lab-Course1\KlinikaProjekt\KlinikaProjekt\obj\Debug\net5.0\Razor\Views\Reviews\ReviewSuccess.cshtml.g.cs

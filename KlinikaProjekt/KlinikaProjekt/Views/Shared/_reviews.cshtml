@@ -1,0 +1,273 @@
+﻿@inject UserManager<ApplicationUser> UserManager; 
+@using KlinikaProjekt.Data.ViewModels;
+
+@model ViewModel
+
+
+	<style type="text/css">
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html,body{
+  display: grid;
+  height: 100%;
+  place-items: center;
+  background: #17a2b8;
+}
+::selection{
+  background: rgba(23,162,184,0.3);
+}
+.wrapper{
+ /* max-width: 1200px;*/
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrapper .box{
+  background: #fff;
+  width: calc(33% - 10px);
+  padding: 25px;
+  border-radius: 3px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
+}
+.wrapper .box i.quote{
+  font-size: 20px;
+  color: #17a2b8;
+}
+.wrapper .box .content{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+.box .info .name{
+  font-weight: 600;
+  font-size: 17px;
+}
+.box .info .job{
+  font-size: 16px;
+  font-weight: 500;
+  color: #17a2b8;
+}
+.box .info .stars{
+  margin-top: 2px;
+}
+.box .info .stars i{
+  color: #17a2b8;
+}
+.box .content .image{
+  height: 75px;
+  width: 75px;
+  padding: 3px;
+  background: #17a2b8;
+  border-radius: 50%;
+}
+.content .image img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.box:hover .content .image img{
+  border-color: #fff;
+}
+
+</style>
+
+
+@*<style>
+	
+.testimonials{
+	min-height: 100vh;
+	background: #081131;
+	float: left;
+	width: 100%;
+	padding:100px 15px;
+}
+
+.container{
+	max-width: 1170px;
+	margin: auto;
+}
+
+.testimonials .title{
+	margin-bottom:60px
+}
+
+.testimonials .title h1{
+	text-align: center;
+	color:#fff;
+	font-size: 36px;
+	margin:0;
+}
+
+.testimonials .slider{
+	border:1px solid #7e8bb6;
+	max-width: 600px;
+	margin: auto;
+	text-align: center;
+	padding:30px;
+	background-color: #081131;
+	border-radius: 50px;
+   }
+
+   .testimonials .slider-indicator{
+	text-align: center;
+	padding-bottom:30px;
+}
+
+.testimonials .slider-indicator img{
+	max-height:80px;
+	max-width:80px;
+	border-radius:50% 0% 50% 0%;
+	display: inline-block;
+	margin:0 8px;
+	opacity:0.2;
+	border:4px solid #fff;
+	cursor: pointer;
+	transition: opacity 1s ease;
+}
+
+.testimonials .slider-indicator img.active{
+	opacity:1;
+}
+
+.testimonials .slider p{
+	font-size:18px;
+	color:#fff;
+	word-spacing: 2px;
+}
+
+.testimonials .slider .client-info h3{
+	font-weight: bold;
+	color:#0059f7;
+	font-size:18px;
+	margin:30px 0 10px;
+}
+
+.testimonials .slider .client-info span{
+	display: block;
+	font-size:16px;
+	color:#f1f3f2;
+}
+
+.testimonials .slider .slide{
+	display: none;
+}
+
+.testimonials .slider .slide.active{
+	display: block;
+	animation: slide 1s ease;
+}
+
+</style>
+
+<section class="testimonials">
+		<div class="container">
+			<div class="title">
+				<h1>This is What our Costumers Says</h1>
+			</div>
+
+			<div class="slider-indicator ">
+				<img  src="https://media.istockphoto.com/photos/asian-businesswoman-standing-smiling-at-the-camera-picture-id1335295926?b=1&k=20&m=1335295926&s=170667a&w=0&h=6TEcLiO3JwNG3VL2O1LLWGdFgUulikOMqG1cAGixf-E=" class="active testim" alt="img" data-id="0">
+				@foreach(Review reviews in Model.reviews){
+				<img id="@reviews.id" onclick="showThis()" src="@reviews.image" alt="" data-id="@reviews.id">
+				}
+			</div>
+
+			<div class="slider">
+				<div class="slide active">
+					<p>
+				
+						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti soluta asperiores magni 
+						voluptatem iste consequuntur reiciendis quas velit veritatis animi, ducimus iusto ad sint 
+						similique sapiente, suscipit ab, rerum voluptatum. Quaerat ad eveniet architecto, quidem 
+						tempora error magnam! At nisi qui ratione, tempora vel corporis sint exercitationem maxime 
+						minima velit!	
+					</p>
+					<div class="client-info">
+						<h3>Example Test@</h3>
+						<span>Happy Patient!</span>
+					</div>
+				</div>
+				foreach(Review reviews in Model.reviews){
+				<div class="slide">
+					<p>
+				
+						@reviews.reviewText
+					</p>
+					<div class="client-info">
+						<h3>@reviews.fullname</h3>
+						<span>Happy Patient!</span>
+					</div>
+				</div>
+				}
+				
+			</div>
+
+		</div>
+	</section>
+
+section Scripts{
+		<script>
+
+			function showThis(){
+				let id=this.getAttribute("id");
+
+                id.classList.add("active");
+				
+			}
+			
+//const slides = document.querySelector(".slider").children;
+//const indicatorImages = document.querySelector(".slider-indicator").children;
+
+//for(let i=0; i<indicatorImages.length; i++){
+//  indicatorImages[i].addEventListener("click", function(){
+
+//    for(let j=0; j<indicatorImages.length; j++){
+//      indicatorImages[j].classList.remove("active");
+//    }
+//    this.classList.add("active");
+//    const id=this.getAttribute("data-id");
+//    for(let j=0; j<slides.length; j++){
+//      slides[j].classList.remove("active");
+//    }
+
+//    slides[id].classList.add("active");
+//  })
+//}
+
+</script>
+}*@<div class="col-md-12">
+	<h1 class="text-center">This is What our Costumers Says</h1>
+ <div class="wrapper">
+			
+			
+	 @foreach(Review reviews in Model.reviews){
+		
+    <div style="margin-top:5%!important;" class="box">
+      <p>@reviews.reviewText</p>
+      <div class="content">
+        <div class="info">
+          <div class="name">@reviews.fullname</div>
+          <div class="job">Happy Patient!</div>
+        </div>
+        <div class="image">
+          <img src="@reviews.image" alt="">
+        </div>
+      </div>
+    </div>
+	}
+	
+  
+  </div>
+  <a style="margin-left:50%;margin-top:2%" asp-controller="Reviews" asp-action="LeaveReview" class="btn btn-primary text-center">Leave a Review</a>
+  </div>

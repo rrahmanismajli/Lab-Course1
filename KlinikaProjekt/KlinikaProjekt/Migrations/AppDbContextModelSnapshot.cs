@@ -294,6 +294,29 @@ namespace KlinikaProjekt.Migrations
                     b.ToTable("Patient");
                 });
 
+            modelBuilder.Entity("KlinikaProjekt.Models.Review", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("fullname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("reviewText")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Review");
+                });
+
             modelBuilder.Entity("KlinikaProjekt.Models.Services", b =>
                 {
                     b.Property<int>("id")

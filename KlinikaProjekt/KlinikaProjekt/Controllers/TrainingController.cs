@@ -88,7 +88,7 @@ namespace eTickets.Controllers
         //GET: Movies/Edit/1
         public async Task<IActionResult> Edit(int id)
         {
-            var trainingDetails = await _service.GetByIdAsync(id);
+            var trainingDetails = await _service.GetTrainingByIdAsync(id);
             if (trainingDetails == null) return View("NotFound");
 
             var response = new NewTrainingVM()
@@ -101,7 +101,7 @@ namespace eTickets.Controllers
                 EndDate = trainingDetails.EndDate,
                 ImageURL = trainingDetails.ImageURL,
                TrainingCategory = trainingDetails.TrainingCategory,
-                DepartmentId = trainingDetails.DepartmentId,
+                //DepartmentId = trainingDetails.DepartmentId,
                 PatientId = trainingDetails.PatientId,
                 DoctorIds = trainingDetails.Training_Doctor.Select(n => n.DoctorId).ToList(),
             };
