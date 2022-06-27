@@ -10,6 +10,8 @@
 }
 
 
+
+
 body{
 	font-family: 'Open Sans', sans-serif;
 	margin: 0px;
@@ -160,6 +162,14 @@ section.about-section {
     border: 10px solid var(--color-primary);
 }
 
+
+.back-to-topHome {
+    position: fixed;
+    display: none;
+    right: 30px;
+    bottom: 30px;
+    z-index: 99;
+}
 
 
 /*Services Section*/

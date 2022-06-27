@@ -77,7 +77,15 @@ namespace eTickets.Controllers
             TempData["Error"] = "Wrong credentials. Please, try again!";
             return View(loginVM);
         }
+        public async Task<IActionResult> MakeAdmin(LoginVM loginVM)
+        {
 
+            var user = await _userManager.FindByEmailAsync(loginVM.EmailAddress);
+
+            await _userManager.AddToRoleAsync(user, UserRoles.Admin);
+            return View("RegisterCompleted");
+
+        }
 
         public IActionResult Register() => View(new RegisterVM());
 
@@ -97,7 +105,7 @@ namespace eTickets.Controllers
             {
                 FullName = registerVM.FullName,
                 Email = registerVM.EmailAddress,
-                UserName = registerVM.EmailAddress
+                UserName = registerVM.EmailAddress,
             };
             var newUserResponse = await _userManager.CreateAsync(newUser, registerVM.Password);
 
@@ -109,6 +117,8 @@ namespace eTickets.Controllers
 
             return View("RegisterCompleted");
         }
+
+        
 
         [HttpPost]
         public async Task<IActionResult> Logout()

@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<KlinikaProjekt.Models.News>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Blog & News";
 }
 
 
@@ -16,25 +16,6 @@
 				      
 				 </div>
  
-				 @*@foreach(var item in IEnumerable<KlinikaProjekt.Models.News> )*@
-				@*<div class="col-md-4">
-				      <div class="blog-box">
-					     <div class="blog-media">
-						      <img src="images/blog1.jpg" alt="">
-						  </div>
-						  <div class="blog-info">
-						      <h3><a href="#">Lorem Ipsum is simply dummy  </a></h3>
-							  <ul class="meta">
-							      <li> <i class="fa fa-calendar" aria-hidden="true"></i> 18 Sep 2021 </li>
-							      <li> <i class="fa fa-user-o" aria-hidden="true"></i> Admin </li>
-							  </ul>
-							  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-						  </div>
-					</div>
-				 </div> 
-		 
-			</div>
-		</div>*@
 
 	<partial name="_NewsPartial"/>
 		
@@ -44,59 +25,10 @@
 {
     
     <div style="position: fixed; right: 25px; bottom: 25px;" class="text-white">
-        <a  asp-action="Create" class="btn btn-success">
+        <a  asp-action="Create" asp-controller="News" class="btn btn-success">
             <i class="bi bi-plus-circle"></i> Add New
         </a>
     </div>
 
 }
 
-<!--End Blog 	-->
-@*  @if (User.IsInRole("Admin"))
-            {
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.image)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.desc)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.datetime)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-              <img src="@item.image"  class="border-info" style="max-width: 150px;border:1px solid black;" />
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.desc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.datetime)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
-}*@

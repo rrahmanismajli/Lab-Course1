@@ -1,9 +1,16 @@
 ﻿@using KlinikaProjekt.Data.ViewModels;
 
 @model ViewModel
-
+@{
+	var count = 0;
+}
 @foreach(Doctor doctor in Model.Doctors){
-				 <div class="col-md-3">
+	count++;
+	if (count == 5)
+	{
+		break;
+	}
+	<div class="col-md-3">
 				     <div class="team-box">
 					     <div class="team-media">
 						      <img width="350px" height="250px" src="@doctor.ProfilePictureURL" alt="@doctor.FullName" >

@@ -13,11 +13,11 @@ namespace KlinikaProjekt.Models
     {
         public int Id { get; set; }
 
-        [Display(Name = "Training name")]
+        [Display(Name = "Offer name")]
         [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }
 
-        [Display(Name = "Training description")]
+        [Display(Name = "Offer description")]
         [Required(ErrorMessage = "Description is required")]
         public string Description { get; set; }
 
@@ -25,25 +25,25 @@ namespace KlinikaProjekt.Models
         [Required(ErrorMessage = "Price is required")]
         public double Price { get; set; }
 
-        [Display(Name = "Training poster URL")]
-        [Required(ErrorMessage = "Training poster URL is required")]
+        [Display(Name = "Offer poster URL")]
+        [Required(ErrorMessage = "Offer poster URL is required")]
         public string ImageURL { get; set; }
 
-        [Display(Name = "Training start date")]
+        [Display(Name = "Offer start date")]
         [Required(ErrorMessage = "Start date is required")]
         public DateTime StartDate { get; set; }
 
-        [Display(Name = "Training end date")]
+        [Display(Name = "Offer end date")]
         [Required(ErrorMessage = "End date is required")]
         public DateTime EndDate { get; set; }
 
         [Display(Name = "Select a category")]
-        [Required(ErrorMessage = "Training category is required")]
+        [Required(ErrorMessage = "Offer category is required")]
         public Trainingategory TrainingCategory { get; set; }
 
         //Relationships
         [Display(Name = "Select doctor(s)")]
-        [Required(ErrorMessage = "Training doctor(s) is required")]
+        [Required(ErrorMessage = "Offer doctor(s) is required")]
         public List<int> DoctorIds { get; set; }
 
         [Display(Name = "Select a Department")]

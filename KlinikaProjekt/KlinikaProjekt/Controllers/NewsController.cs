@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using KlinikaProjekt.Data;
 using KlinikaProjekt.Models;
 using KlinikaProjekt.Data.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace KlinikaProjekt.Controllers
 {
@@ -23,6 +24,7 @@ namespace KlinikaProjekt.Controllers
         }
 
         // GET: News
+       
         public async Task<IActionResult> Index()
         {
             return View(await _context.News.ToListAsync());
@@ -47,6 +49,7 @@ namespace KlinikaProjekt.Controllers
         }
 
         // GET: News/Create
+        [Authorize(Roles="Admin")]
         public IActionResult Create()
         {
             return View();
@@ -69,6 +72,7 @@ namespace KlinikaProjekt.Controllers
         }
 
         // GET: News/Edit/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -120,6 +124,7 @@ namespace KlinikaProjekt.Controllers
         }
 
         // GET: News/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

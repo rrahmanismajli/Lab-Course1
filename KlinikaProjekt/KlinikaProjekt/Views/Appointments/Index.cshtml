@@ -34,6 +34,9 @@
         </tr>
     </thead>
     <tbody>
+        @{
+            var count = 0;
+        }
 @foreach (var item in Model) {
         <tr>
             <td>
@@ -57,9 +60,13 @@
             <td>
                 <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                <a asp-action="Delete" asp-route-id="@item.id">Delete</a> |
+                <a href="mailto:@item.email?subject=Your Appointment Arrive!&body=Hello @item.Name We hope you are well,thank you for your appointment we'll call you soon!">Email Now!</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+    @count++;
+
+}
