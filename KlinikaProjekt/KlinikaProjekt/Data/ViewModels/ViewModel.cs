@@ -11,5 +11,6 @@ namespace KlinikaProjekt.Data.ViewModels
 		public IEnumerable<KlinikaProjekt.Models.Services> services { get; set; }
 
 		public IEnumerable<Review> reviews { get; set; }
+        public IEnumerable<Events> Events { get; set; }
 	}
 }

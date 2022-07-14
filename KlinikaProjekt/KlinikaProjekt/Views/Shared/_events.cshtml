@@ -1,0 +1,46 @@
+﻿@using KlinikaProjekt.Data.ViewModels;
+@model ViewModel
+
+
+
+<section class="booking-section bg-overlay" id="booking-section">
+     <h2 style="color:#fff" class="text-center">
+         OUR EVENTS
+        </h2>
+        <hr />
+	   <div class="container">
+<div class="row">
+    @foreach(Events events in Model.Events){
+    <div class="col-md-6">
+      <!-- START widget-->
+     
+      <div class="panel widget">
+         <div class="row row-table row-flush">
+            <div class="col-xs-5">
+               <picture class="lateral-picture">
+                  <img  style="border:2px solid grey; max-width:250px" src="@events.image" alt="">
+               </picture>
+            </div>
+            <div class="col-xs-7 align-middle p-lg">
+               <p style="color:red">
+                 Start Date: <span class="text-lg"></span>@events.startDate.ToShortDateString()</p>
+               <p style="color:red">
+                   <p style="color:red">
+                 End Date: <span class="text-lg"></span>@events.endDate.ToShortDateString()</p>
+               <p>
+                  <strong style="color:red">@events.name</strong>
+               </p>
+               <p style="color:red">@events.description</p>
+            </div>
+         </div>
+      </div>
+    
+      <!-- END widget-->
+    </div>
+    }
+
+</div>
+</div>
+
+	</section>	
+   

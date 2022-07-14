@@ -1,0 +1,60 @@
+﻿@model KlinikaProjekt.Models.Pharmacy
+
+@{
+    
+    ViewData["Title"] = "Details";
+}
+ <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+<link href="~/css/pharmaStyle.css" rel="stylesheet">
+
+<h1>Details</h1>
+
+   
+    <div class="container">
+
+      <!-- Left Column / Headphones Image -->
+    <div class="left-column">
+        <img class="active" src="@Model.Image" alt="">
+      </div>
+
+
+
+      <!-- Right Column -->
+      <div class="right-column">
+
+        <!-- Product Description -->
+        <div class="product-description">
+  <h1>@Model.Name</h1>
+          <p>@Model.Description</p>
+        </div>
+
+        <!-- Product Configuration -->
+        <div class="product-configuration">
+
+          <!-- Product Color -->
+          <div class="product-color">
+            <span>Quantity:@Model.Quantity</span>
+
+            
+
+          </div>
+
+          <!-- Cable Configuration -->
+          <div class="cable-config">
+  
+            <a href="#">How to use this medicament</a>
+          </div>
+        </div>
+
+        <!-- Product Pricing -->
+        <div class="product-price">
+          <span>@Model.Price$</span>
+          <a asp-controller="MedicamentOrders" asp-action="Buy" class="cart-btn">Buy Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+    <a asp-action="Index">Back to List</a>
+</div>

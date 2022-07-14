@@ -46,5 +46,9 @@ namespace KlinikaProjekt.Data
         public DbSet<KlinikaProjekt.Models.News> News { get; set; }
         public DbSet<KlinikaProjekt.Models.Services> Services { get; set; }
         public DbSet<KlinikaProjekt.Models.Review> Review { get; set; }
+        public DbSet<KlinikaProjekt.Models.Pharmacy> Pharmacy { get; set; }
+        public DbSet<KlinikaProjekt.Models.MedicamentOrder> MedicamentOrder { get; set; }
+        public DbSet<KlinikaProjekt.Models.Events> Events { get; set; }
+        public DbSet<KlinikaProjekt.Models.Careers> Careers { get; set; }
     }
 }

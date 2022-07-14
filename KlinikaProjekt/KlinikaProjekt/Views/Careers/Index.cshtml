@@ -1,0 +1,75 @@
+﻿@model IEnumerable<KlinikaProjekt.Models.Careers>
+
+@{
+    ViewData["Title"] = "Index";
+}
+ <div class="heading_container heading_center">
+        <h2 class="text-center">
+         FEATURED JOBS
+        </h2>
+      </div>
+ <section class="job_section layout_padding">
+    <div class="container">
+     
+           
+                 <div class="job_container">
+        <div class="row">
+                   @foreach (var item in Model)
+        {
+          <div class="col-lg-6">
+               @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                                    {
+                                    <a  class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.id"><i class="bi bi-pencil-square"></i>Edit </a> 
+                                     <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.id"><i class="bi bi-pencil-square"></i>Delete </a> 
+                                        }
+            <div class="box">
+         
+              <div class="job_content-box">
+                <div class="img-box">
+                  <img style="max-width:250px" src="@item.image" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    @item.title
+                  </h5>
+                  <div class="detail-info">
+                    <h6>
+                      
+                      <span>
+                        @item.description
+                      </span>
+                    </h6>
+                    <h6>
+                      <i>This job Is Available Until:</i>
+                      <span>
+                        @item.deadLine
+                      </span>
+                    </h6>
+                  </div>
+                </div>
+              </div>
+                            
+              <div class="option-box">  
+                  <i>Send your CV and Cover Letter on:info@klinika.org</i>
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+        
+      </div>
+                
+           
+      
+    </div>
+  </section>
+    @if (User.IsInRole("Admin"))
+{
+    
+    <div style="position: fixed; right: 25px; bottom: 25px;" class="text-white">
+        <a  asp-action="Create" asp-controller="News" class="btn btn-success">
+            <i class="bi bi-plus-circle"></i> Add New
+        </a>
+    </div>
+
+}

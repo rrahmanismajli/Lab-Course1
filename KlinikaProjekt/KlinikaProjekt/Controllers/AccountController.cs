@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace eTickets.Controllers
+namespace KlinikaProjekt.Controllers
 {
     public class AccountController : Controller
     {
